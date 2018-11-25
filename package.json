@@ -1,0 +1,168 @@
+{
+	"name": "@need-some/i18n",
+	"version": "0.0.4",
+	"description": "String formatting with i18n support",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"author": "Kris M. Treutwein",
+	"license": "LGPL-3.0-or-later",
+	"scripts": {
+		"build": "tsc",
+		"cti": "cti ./src/ --excludes test",
+		"test": "tsc && karma start karma.conf.headless.js",
+		"test-browser": "karma start",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+		"lint": "tslint -p tsconfig.json -c package.json -t verbose"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:need-some/need-some-i18n.js.git"
+	},
+	"devDependencies": {
+		"@need-some/test": "0.0.7",
+		"@types/jasmine": "^2.8.9",
+		"create-ts-index": "^1.0.14",
+		"jasmine-core": "^3.2.1",
+		"karma": "^3.0.0",
+		"karma-chrome-launcher": "^2.2.0",
+		"karma-coverage-istanbul-reporter": "^2.0.4",
+		"karma-jasmine": "^1.1.2",
+		"karma-jasmine-html-reporter": "^1.3.1",
+		"karma-typescript": "^3.0.13",
+		"prettier": "^1.14.3",
+		"tslint": "^5.11.0",
+		"tslint-config-prettier": "^1.15.0",
+		"typescript": "^3.1.3"
+	},
+	"dependencies": {
+		"@need-some/basic": "0.0.8",
+		"moment-timezone": "^0.5.21"
+	},
+	"prettier": {
+		"printWidth": 140,
+		"useTabs": true,
+		"trailingComma": "none",
+		"singleQuote": true,
+		"arrowParens": "avoid"
+	},
+	"rules": {
+		"arrow-return-shorthand": true,
+		"callable-types": true,
+		"class-name": true,
+		"comment-format": [
+			true,
+			"check-space"
+		],
+		"curly": true,
+		"deprecation": {
+			"severity": "warn"
+		},
+		"eofline": true,
+		"forin": true,
+		"import-blacklist": [
+			true,
+			"rxjs/Rx"
+		],
+		"import-spacing": true,
+		"indent": [
+			true,
+			"tabs"
+		],
+		"interface-over-type-literal": true,
+		"label-position": true,
+		"max-line-length": [
+			true,
+			140
+		],
+		"member-access": false,
+		"member-ordering": [
+			true,
+			{
+				"order": [
+					"static-field",
+					"static-method",
+					"instance-field",
+					"instance-method"
+				]
+			}
+		],
+		"no-arg": true,
+		"no-bitwise": true,
+		"no-console": [
+			true,
+			"debug",
+			"trace",
+			"log"
+		],
+		"no-construct": true,
+		"no-debugger": true,
+		"no-duplicate-super": true,
+		"no-empty": false,
+		"no-empty-interface": true,
+		"no-eval": true,
+		"no-inferrable-types": [
+			true,
+			"ignore-params"
+		],
+		"no-misused-new": true,
+		"no-non-null-assertion": true,
+		"no-redundant-jsdoc": true,
+		"no-shadowed-variable": true,
+		"no-string-literal": false,
+		"no-string-throw": true,
+		"no-switch-case-fall-through": true,
+		"no-trailing-whitespace": true,
+		"no-unnecessary-initializer": true,
+		"no-unused-expression": true,
+		"no-use-before-declare": true,
+		"no-var-keyword": true,
+		"object-literal-sort-keys": false,
+		"one-line": [
+			true,
+			"check-open-brace",
+			"check-catch",
+			"check-else",
+			"check-whitespace"
+		],
+		"prefer-const": true,
+		"quotemark": [
+			true,
+			"single"
+		],
+		"radix": true,
+		"semicolon": [
+			true,
+			"always"
+		],
+		"triple-equals": [
+			true,
+			"allow-null-check"
+		],
+		"typedef-whitespace": [
+			true,
+			{
+				"call-signature": "nospace",
+				"index-signature": "nospace",
+				"parameter": "nospace",
+				"property-declaration": "nospace",
+				"variable-declaration": "nospace"
+			}
+		],
+		"unified-signatures": false,
+		"variable-name": false,
+		"whitespace": [
+			true,
+			"check-branch",
+			"check-decl",
+			"check-operator",
+			"check-separator",
+			"check-type"
+		],
+		"no-any": [
+			true
+		],
+		"no-unused-variable": [
+			true
+		]
+	}
+}

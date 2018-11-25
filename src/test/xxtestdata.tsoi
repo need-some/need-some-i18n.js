@@ -1,0 +1,93 @@
+const replacer = new StringReplacer();
+console.log(replacer.replace('hello')); // the most simple test outputs the input string 'hello'
+console.log(replacer.replace('hello ${var}', {var: 'world'})); // a plain parameter is replaced to 'hello world'
+console.log(replacer.replace('hello ${var} from ${who}', {var: 'world', who: 'need-some'})); // multiple parameters as well to 'hello world from need-some'
+
+replacer.registerFormatter('upper', marshal(s => s.toUpperCase()));
+replacer.registerFormatter('concat', marshal(s => s.value + s.params[0]));
+replacer.registerFormatter('constant', marshal(s => 'hello world'));
+console.log(replacer.replace('hello ${var|upper}', {var: 'world'}));
+console.log(replacer.replace('hello ${var|concat(${two})}', {var: 'world', two:'2'}));
+console.log(replacer.replace('hello ${var|constant}', {var: 'world'}));
+console.log(replacer.replace('hello ${varx}', {var: 'world'}));
+replacer.registerResolver('constant', value => value === undefined);
+console.log(replacer.replace('hello ${varx}', {var: 'world'}));
+
+replacer.registerFormatter('name', marshal(s => s.firstname + ' ' + s.lastname));
+replacer.registerResolver('name', value => value && value.firstname);
+console.log(replacer.replace('hello ${var}', {var: {firstname: 'The', lastname: 'Doctor'}}));
+
+console.log(replacer.replace('hello ${var | concat(${three|upper})}', {var: 'variant', three:'three'}));
+console.log(replacer.replace('hello ${param.x | upper | concat(${param.x})}', {param: {x: 'booga'}}));
+
+export const i18nDe = {
+	words: {
+		nomen: {
+			'~': '${~.nominativ.singular}',
+			genitiv: {
+				singular: '${~.nominativ.singular}s'
+			},
+			accusativ: {
+				singluar: '${~.nominativ.singular}'
+			},
+			article: {
+				nominativ: {
+					plural: 'die'
+				},
+				genitiv: {
+					plural: 'der'
+				},
+				dativ: {
+					plural: 'den'
+				},
+				accusativ: {
+					plural: 'die'
+				}
+			}
+		},
+		nomenFeminin: {
+			'#extends': 'words.nomen',
+			article: {
+				nominativ: {
+					singular: 'die'
+				},
+				genitiv: {
+					singular: 'der'
+				},
+				dativ: {
+					singular: 'der'
+				},
+				accusativ: {
+					singular: 'die'
+				}
+			},
+			genitiv: {
+				singular: '${~.nominativ.singular}'
+			},
+			accusativ: {
+				singluar: '${~.nominativ.singular}'
+			}
+		},
+		strawberry: {
+			'#extends': 'words.nomenFeminin',
+			nominativ: {
+				singular: 'Erdbeere'
+			}
+		},
+		apple: {
+			'#extends': 'words.nomen',
+			nominativ: {
+				singular: 'Apfel'
+			}
+		}
+	},
+	sentences: {
+		// en: 'we buy ${item} ${count} times', call: getText('sentences.buySimple', {count:2, item:'Erdbeeren'})
+		buySimple: 'wir kaufen ${count} ${item}',
+		// en: 'we buy ${item} ${count} times', call: getText('sentences.buySimpleX', {count:2, item:'words.strawberry.accusativ.plural'})
+		buySimpleX: 'wir kaufen ${count} ${item|translate}',
+		// call: getText('sentences.buySimpleX', {count:2, item:'words.strawberry.accusativ.plural'})
+		buy: 'wir kaufen ${${item}.accusative.plural | translate }',
+		buyTwo: '${sentences.buy | translate({item:item1}) | firstUpper) und ${sentences.buy | translate({item:item2})'
+	}
+};
