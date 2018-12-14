@@ -1,5 +1,9 @@
 # need-some-i18n.js
 [![Build Status](https://travis-ci.org/need-some/need-some-i18n.js.svg?branch=master)](https://travis-ci.org/need-some/need-some-i18n.js)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![npm version](https://badge.fury.io/js/%40need-some%2Fi18n.svg)](https://badge.fury.io/js/%40need-some%2Fi18n)
+[![need-some/i18n](https://img.shields.io/badge/need--some-i18n-ff69b4.svg)](https://www.npmjs.com/org/need-some)
+[![Dependencies](https://david-dm.org/need-some/need-some-i18n.js/status.svg)](https://david-dm.org/need-some/need-some-i18n.js)
 
 _need-some_ is a collection of small yet useful functions.
 The i18n package provides string formatting extensions
