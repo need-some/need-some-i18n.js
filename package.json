@@ -1,6 +1,6 @@
 {
 	"name": "@need-some/i18n",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "String formatting with i18n support",
 	"main": "index.js",
 	"types": "index.d.ts",
@@ -19,7 +19,7 @@
 		"url": "git@github.com:need-some/need-some-i18n.js.git"
 	},
 	"devDependencies": {
-		"@need-some/test": "0.0.18",
+		"@need-some/test": "0.0.19",
 		"@types/jasmine": "^2.8.12",
 		"create-ts-index": "^1.0.14",
 		"jasmine-core": "^3.3.0",
@@ -35,7 +35,7 @@
 		"typescript": "^3.2.2"
 	},
 	"dependencies": {
-		"@need-some/basic": "0.0.20"
+		"@need-some/basic": "0.0.21"
 	},
 	"prettier": {
 		"printWidth": 140,
