@@ -1,6 +1,6 @@
 {
 	"name": "@need-some/i18n",
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"description": "String formatting with i18n support",
 	"main": "index.js",
 	"types": "index.d.ts",
@@ -19,23 +19,23 @@
 		"url": "git@github.com:need-some/need-some-i18n.js.git"
 	},
 	"devDependencies": {
-		"@need-some/test": "0.0.19",
+		"@need-some/test": "^0.1.0",
 		"@types/jasmine": "^2.8.12",
 		"create-ts-index": "^1.0.14",
 		"jasmine-core": "^3.3.0",
-		"karma": "^4.1.0",
+		"karma": "^5.0.1",
 		"karma-chrome-launcher": "^2.2.0",
 		"karma-coverage-istanbul-reporter": "^2.0.4",
 		"karma-jasmine": "^1.1.2",
 		"karma-jasmine-html-reporter": "^1.4.0",
-		"karma-typescript": "^4.1.0",
+		"karma-typescript": "^5.0.2",
 		"prettier": "^1.15.3",
 		"tslint": "^5.11.0",
 		"tslint-config-prettier": "^1.17.0",
 		"typescript": "^3.2.2"
 	},
 	"dependencies": {
-		"@need-some/basic": "0.0.21"
+		"@need-some/basic": "^0.1.1"
 	},
 	"prettier": {
 		"printWidth": 140,
